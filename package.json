@@ -1,0 +1,17 @@
+{
+  "name": "oemer",
+  "version": "1.0.0",
+  "description": "[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/BreezeWhite/oemer/blob/main/colab.ipynb)\r [![PyPI version](https://badge.fury.io/py/oemer.svg)](https://badge.fury.io/py/oemer)\r ![PyPI - License](https://img.shields.io/github/license/BreezeWhite/oemer)\r [![Downloads](https://img.shields.io/pypi/dm/oemer?color=orange)](https://pypistats.org/packages/oemer)\r [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8429346.svg)](https://doi.org/10.5281/zenodo.8429346)",
+  "main": "main.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "xml2js": "^0.6.2"
+  }
+}
