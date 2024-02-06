@@ -2,10 +2,8 @@
 
 - oemer 버전: 0.1.7
 
-- 파이썬 가상환경 만들어서 사용할 것.
-  - 가상환경 이름: myenv
-  - requirements.txt를 사용할 것
-    - pip install -r requirements.txt
+- 파이썬 가상환경 만들어서 사용할 것을 추천
+  - 현재 세팅상 가상환경의 이름은 "newenv"임. 편하게 테스트 해보고 싶으면 newenv로 만들고, 다른 이름으로 쓰고 싶으면 main.js 코드 수정해서 사용할 것.
 
 ### 이 아래부턴 순서대로 할 것(conda를 통한 가상환경 구축)
 
