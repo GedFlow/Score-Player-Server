@@ -1,14 +1,11 @@
 const { exec } = require('child_process');
 
 // 악보 이름
-const nodeVariable_musicTitle = "octop.png"; // 전달할 변수 값
-process.env.NODE_VARIABLE_MUSIC_TITLE = nodeVariable_musicTitle; // 시스템 환경변수 설정
+const nodeVariable_musicTitle = "light.jpg"; // 악보이름
+process.env.NODE_VARIABLE_MUSIC_TITLE = nodeVariable_musicTitle; // 악보이름을 시스템 환경변수로 설정
 
-const powershellScriptPath = `.\\script.ps1`;
-const pythonScriptPath = '.\\translator.py';
-
-// PowerShell 스크립트 실행 (File 옵션 사용)
-exec(`powershell -Command "${powershellScriptPath}"`, (error, stdout, stderr) => {
+// PowerShell 스크립트 실행
+exec(`powershell -Command ".\\script.ps1"`, (error, stdout) => {
   if (error) {
     console.error(`Error executing PowerShell script: ${error}`);
     return;
@@ -18,10 +15,7 @@ exec(`powershell -Command "${powershellScriptPath}"`, (error, stdout, stderr) =>
   console.log(`PowerShell script output:\n${stdout}`);
 
   // Python 가상환경 활성화 및 스크립트 실행
-  const virtualEnvPath = '.\\myenv'; // 가상환경 경로
-  const activateCommand = `${virtualEnvPath}\\Scripts\\activate`; // 윈도우 환경일 경우 'activate'로 변경
-  const pythonCommand = `${activateCommand} && python ${pythonScriptPath}`;
-
+  const pythonCommand = `.\\newenv\\Scripts\\activate && python .\\translator.py`;
   exec(pythonCommand, (pythonError, pythonStdout, pythonStderr) => {
     if (pythonError) {
       console.error(`Error executing Python script: ${pythonError}`);

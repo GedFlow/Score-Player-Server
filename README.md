@@ -1,5 +1,7 @@
 # 악보 재생기 ( Score player) 서버용 코드 저장소
 
+- oemer 버전: 0.1.7
+
 - 파이썬 가상환경 만들어서 사용할 것.
   - 가상환경 이름: myenv
   - requirements.txt를 사용할 것

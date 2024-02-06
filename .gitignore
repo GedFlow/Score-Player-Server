@@ -21,4 +21,4 @@ checkpoints/
 *.jpeg
 
 node_modules
-myenv
+newenv
