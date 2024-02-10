@@ -21,7 +21,7 @@ exec(`powershell -Command ".\\script.ps1"`, (error, stdout) => {
       console.error(`Error executing Python script: ${pythonError}`);
       return;
     }
-
+  
     console.log(`Python script output: ${pythonStdout}`);
     console.error(`Python script errors: ${pythonStderr}`);
   });

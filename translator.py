@@ -16,7 +16,7 @@ def convert_musicxml_to_midi(musicxml_file, midi_file):
 
 # midi파일을 wav파일로 변환하는 함수
 def convert_midi_to_wav(midi_file, wav_file):
-    subprocess.run(['fluidsynth', '-ni', 'C:\Program Files\SynthFont2\GMGSx.sf2', midi_file, '-F', wav_file])
+    subprocess.run(['fluidsynth', '-ni', 'C:\\Program Files\\SynthFont2\\GMGSx.sf2', midi_file, '-F', wav_file])
 
 
 musicxml_file_path = './musicxml/'+music_title+'.musicxml'
