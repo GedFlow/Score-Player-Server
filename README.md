@@ -18,8 +18,10 @@ Nvidia cuda관련 라이브러리 설치목록
 
 pip gpu연동 테스트(순서중요)
   - numpy 설치
-  - pip install torch==<desired_version>+cu118 torchvision torchaudio -f https://download.pytorch.org/whl/cu118/torch_stable.html
-  위 명령어를 통해 pytorch 설치(일반적인 pytorch가 아니라 gpu사용이 가능한 torch이며, cuda 11.8버전과 호환되는 라이브러리)
+  ```
+  pip install torch==<desired_version>+cu118 torchvision torchaudio -f https://download.pytorch.org/whl/cu118/torch_stable.html
+  ```
+  - 위 명령어를 통해 pytorch 설치(일반적인 pytorch가 아니라 gpu사용이 가능한 torch이며, cuda 11.8버전과 호환되는 라이브러리)
 
 그외 pip 설치 목록
   - onnxruntime==1.16
