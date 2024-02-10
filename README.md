@@ -30,4 +30,10 @@ pip gpu연동 테스트(순서중요)
   - scipy
   - scikit-learn>=1.2
 
+
+사운드폰트 다운받아 translator.py 내부에서 경로를 잘 설정해줄 것.
+현재 리포엔 'C:\\Program Files\\SynthFont2\\GMGSx.sf2' 라고 설정되어있는데, 이는 주인장 PC환경이므로 경로를 잘 설정하기 바람.
+
+> socre 디렉토리에 악보사진을 넣어준 후 main.js 4번째 라인, 변수에 들어갈 값(문자열)에 해당 악보이름을 넣어줄 것.
+
 마지막으로 pip install oemer 후 main.js 실행
