@@ -22,5 +22,4 @@ checkpoints/
 
 node_modules
 newenv
-server.cert
-server.key
+config

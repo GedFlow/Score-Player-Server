@@ -9,13 +9,13 @@ import Core from './core.js';
 let musicTitle = "";
 
 const app = express();
-const port = 1609
+const port = 8080
 app.use(cors());
 app.use('/music', express.static('./wav', {}));
 
 const options = {
-  key: fs.readFileSync('server.key'),
-  cert: fs.readFileSync('server.cert'),
+  key: fs.readFileSync("./config/key.pem"),
+  cert: fs.readFileSync("./config/cert.pem"),
 };
 
 const storage = multer.diskStorage({
@@ -29,9 +29,13 @@ const storage = multer.diskStorage({
 })
 const upload = multer({ storage: storage });
 
-https.createServer(options, app).listen(port, () => {
-  console.log(`https://localhost:${port}  에서 node 서버 실행 중...`);
+app.listen(port, () => {
+  console.log(`http://localhost:${port}  에서 node 서버 실행 중...`);
 })
+
+https.createServer(options, app).listen(1609, () => {
+  console.log(`https://localhost:1609  에서 node 서버 실행 중...`);
+});
 
 app.post('/', upload.single('image'), async (req, res) => {
   const uploadedFile = req.file;
