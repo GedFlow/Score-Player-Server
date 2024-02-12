@@ -3,7 +3,7 @@ import { exec } from 'child_process';
 
 const Core = async () => {
   // 악보 이름
-  const nodeVariable_musicTitle = "flower-dance.png"; // 악보이름
+  const nodeVariable_musicTitle = "light.jpg"; // 악보이름
   process.env.NODE_VARIABLE_MUSIC_TITLE = nodeVariable_musicTitle; // 악보이름을 시스템 환경변수로 설정
   
   // PowerShell 스크립트 실행
