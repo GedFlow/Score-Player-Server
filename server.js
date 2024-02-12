@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import multer from 'multer';
 import path from 'path'
+import fs from 'fs'
 import Core from './core.js';
 
 let musicTitle = "";
@@ -33,3 +34,22 @@ app.post('/', upload.single('image'), async (req, res) => {
   res.send(result);
 })
 
+app.post('/delete', async(req, res) => {
+  try {
+    const deletePath = ['./wav', './musicxml', './score'];
+
+    for (const targetPath of deletePath) {
+      const files = fs.readdirSync(targetPath);
+      
+      for (const file of files) {
+        const filePath = path.join(targetPath, file);
+        fs.unlinkSync(filePath); // 파일 삭제
+      }
+    }
+
+    res.send('All files in the directory have been deleted.');
+  } catch (error) {
+    console.error('Error deleting files:', error);
+    res.status(500).send('Internal Server Error');
+  }
+})
