@@ -1,4 +1,5 @@
 import express from 'express';
+import https from 'https';
 import cors from 'cors';
 import multer from 'multer';
 import path from 'path'
@@ -12,6 +13,10 @@ const port = 1609
 app.use(cors());
 app.use('/music', express.static('./wav', {}));
 
+const options = {
+  key: fs.readFileSync('server.key'),
+  cert: fs.readFileSync('server.cert'),
+};
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -24,8 +29,8 @@ const storage = multer.diskStorage({
 })
 const upload = multer({ storage: storage });
 
-app.listen(port, () => {
-  console.log(`http://localhost:${port}  에서 node 서버 실행 중...`);
+https.createServer(options, app).listen(port, () => {
+  console.log(`https://localhost:${port}  에서 node 서버 실행 중...`);
 })
 
 app.post('/', upload.single('image'), async (req, res) => {
