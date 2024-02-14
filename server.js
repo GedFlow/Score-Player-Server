@@ -45,7 +45,8 @@ app.post('/', upload.single('image'), async (req, res) => {
 
 app.post('/delete', async(req, res) => {
   try {
-    const deletePath = ['./wav', './musicxml', './score'];
+    // const deletePath = ['./wav', './musicxml', './score'];
+    const deletePath = ['./musicxml', './score'];
 
     for (const targetPath of deletePath) {
       const files = fs.readdirSync(targetPath);
@@ -61,4 +62,8 @@ app.post('/delete', async(req, res) => {
     console.error('Error deleting files:', error);
     res.status(500).send('Internal Server Error');
   }
+})
+
+app.get('/test', (req, res) => {
+  res.send("connected!")
 })
