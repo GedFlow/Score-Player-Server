@@ -9,13 +9,15 @@ import Core from './core.js';
 let musicTitle = "";
 
 const app = express();
-const port = 8080
+const port = 80;
 app.use(cors());
 app.use('/music', express.static('./wav', {}));
 
 const options = {
-  key: fs.readFileSync("./config/key.pem"),
-  cert: fs.readFileSync("./config/cert.pem"),
+  // key: fs.readFileSync("./config/key.pem"),
+  // cert: fs.readFileSync("./config/cert.pem"),
+  key: fs.readFileSync("C:\\certbot\\live\\gedflow.shop\\privkey.pem"),
+  cert: fs.readFileSync("C:\\certbot\\live\\gedflow.shop\\fullchain.pem"),
 };
 
 const storage = multer.diskStorage({
